@@ -28,6 +28,7 @@ jobs:
           template: classic
           filename: assets/github-metrics.svg
           base: header, activity, community, repositories, metadata
+          config_theme: light
           config_timezone: Asia/Kolkata
           config_display: large
           config_padding: 0, 8 + 11%

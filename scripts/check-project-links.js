@@ -3,10 +3,9 @@ const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
 const projects = JSON.parse(fs.readFileSync(path.join(root, "data", "projects.json"), "utf8"));
-const urls = [...new Set(projects.flatMap(({ live, repo }) => [live, repo])
-  .filter((url) => url && !url.includes("PLACEHOLDER")))];
+const shipped = projects.filter((project) => project.tier === "shipped");
 
-async function check(url) {
+async function request(url) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 15000);
   try {
@@ -14,35 +13,51 @@ async function check(url) {
       method: "HEAD",
       redirect: "follow",
       signal: controller.signal,
-      headers: { "user-agent": "starker111-profile-link-check/1.0" }
+      headers: { "user-agent": "starker111-profile-link-check/2.0" }
     });
-    if (response.status === 405 || response.status === 403) {
+    if ([403, 405].includes(response.status)) {
       response = await fetch(url, {
         method: "GET",
         redirect: "follow",
         signal: controller.signal,
-        headers: { "user-agent": "starker111-profile-link-check/1.0" }
+        headers: { "user-agent": "starker111-profile-link-check/2.0" }
       });
     }
-    return { url, ok: response.ok, status: response.status };
+    return { online: response.ok, httpStatus: response.status };
   } catch (error) {
-    return { url, ok: false, status: error.name === "AbortError" ? "TIMEOUT" : error.message };
+    return {
+      online: false,
+      httpStatus: error.name === "AbortError" ? "TIMEOUT" : error.message
+    };
   } finally {
     clearTimeout(timeout);
   }
 }
 
 (async () => {
-  console.log(`Checking ${urls.length} project URLs...\n`);
-  const results = await Promise.all(urls.map(check));
-  for (const result of results) {
-    console.log(`${result.ok ? "✓" : "✗"} ${result.status} ${result.url}`);
+  const status = { checkedAt: new Date().toISOString(), projects: {} };
+  let failed = false;
+
+  for (const project of shipped) {
+    const live = await request(project.live);
+    const repo = project.repo ? await request(project.repo) : null;
+    const online = live.online && (!repo || repo.online);
+    failed ||= !online;
+    status.projects[project.id] = {
+      status: online ? "online" : "offline",
+      httpStatus: live.httpStatus,
+      repoStatus: repo?.httpStatus ?? null
+    };
+    console.log(`${online ? "OK" : "FAIL"} ${project.title}: ${live.httpStatus} ${project.live}`);
   }
-  const failures = results.filter((result) => !result.ok);
-  if (failures.length) {
-    console.error(`\n${failures.length} URL(s) failed.`);
+
+  fs.writeFileSync(
+    path.join(root, "data", "project-status.json"),
+    `${JSON.stringify(status, null, 2)}\n`
+  );
+
+  if (failed) {
+    console.error("One or more shipped project links are unavailable.");
     process.exitCode = 1;
-  } else {
-    console.log("\nAll configured project URLs are reachable.");
   }
 })();

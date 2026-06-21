@@ -1,9 +1,10 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const { renderProjectSections } = require("./generate-project-cards");
 
 const root = path.resolve(__dirname, "..");
-const projects = JSON.parse(fs.readFileSync(path.join(root, "data", "projects.json"), "utf8"));
 const skills = JSON.parse(fs.readFileSync(path.join(root, "data", "skills.json"), "utf8"));
+const projects = JSON.parse(fs.readFileSync(path.join(root, "data", "projects.json"), "utf8"));
 
 const profile = {
   username: "starker111",
@@ -13,121 +14,78 @@ const profile = {
   email: "sjaswanth486@gmail.com"
 };
 
-const encode = (value) => encodeURIComponent(value).replace(/%20/g, "+");
-const badge = (label, color = "1F2937", logo = "") =>
-  `![${label}](https://img.shields.io/badge/${encode(label)}-${color}?style=for-the-badge${logo ? `&logo=${encode(logo)}&logoColor=white` : ""})`;
-
-const projectCell = (project) => {
-  const usableLive = project.live && !project.live.includes("PLACEHOLDER");
-  const destination = usableLive ? project.live : profile.portfolio;
-  const liveButton = usableLive
-    ? `<a href="${project.live}"><img src="https://img.shields.io/badge/LIVE_DEMO-FF7A18?style=for-the-badge&amp;logo=vercel&amp;logoColor=white" alt="Open live demo" /></a>`
-    : `<img src="https://img.shields.io/badge/DEPLOYMENT_LINK-PENDING-64748B?style=for-the-badge" alt="Deployment link pending" />`;
-  const repoButton = project.repo
-    ? ` <a href="${project.repo}"><img src="https://img.shields.io/badge/SOURCE-111827?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="Open source repository" /></a>`
-    : "";
-  return `<a href="${destination}"><img src="./assets/project-cards/${project.id}.svg" width="100%" alt="${project.title} project card" /></a><br/>${liveButton}${repoButton}`;
-};
-
-const rows = [];
-for (let index = 0; index < projects.length; index += 2) {
-  rows.push(`<tr>
-<td width="50%" valign="top">${projectCell(projects[index])}</td>
-<td width="50%" valign="top">${projects[index + 1] ? projectCell(projects[index + 1]) : ""}</td>
-</tr>`);
-}
-
-const skillBadges = {
-  "AI + LLM Systems": skills.ai.map((item) => badge(item, "111827")).join(" "),
-  "Automation + APIs": skills.automation.map((item) => badge(item, "172033")).join(" "),
-  "Data + Analytics": skills.data.map((item) => badge(item, "1E293B")).join(" ")
-};
+const badge = (label) =>
+  `![${label}](https://img.shields.io/badge/${encodeURIComponent(label).replace(/%20/g, "_")}-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE)`;
+const skillRow = (items) => items.map(badge).join(" ");
+const shippedCount = projects.filter((project) => project.tier === "shipped").length;
 
 const readme = `<div align="center">
 
-<img src="./assets/hero.svg" width="100%" alt="${profile.name} — AI Automation Command Center" />
+<img src="./assets/hero.svg" width="100%" alt="${profile.name} — AI Automation Engineer" />
 
 <br/>
 
 <table>
 <tr>
-<td width="28%" align="center" valign="middle">
-<img src="./assets/profile.png" width="180" alt="${profile.name}" style="border-radius:50%" />
+<td width="25%" align="center" valign="middle">
+<img src="./assets/profile.png" width="170" alt="${profile.name}" style="border-radius:50%" />
 </td>
-<td width="72%" valign="middle">
+<td width="75%" valign="middle">
 
-## Building AI systems that move work forward.
+## Practical AI systems, designed to ship.
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=22&duration=2800&pause=800&color=FF7A18&vCenter=true&width=650&lines=AI+Automation+Engineer;Agentic+AI+Builder;RAG+%26+LLM+App+Developer;Turning+workflows+into+intelligent+systems)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Inter&weight=650&size=21&duration=3000&pause=900&color=FF6B35&vCenter=true&width=620&lines=AI+Automation+Engineer;Agentic+AI+%7C+RAG+%7C+LLM+Applications;Building+deployed+AI+products)](https://git.io/typing-svg)
 
-I design practical AI products that can **reason over context, coordinate workflows, retrieve knowledge, and produce useful actions** — from multi-agent research to document intelligence and operations automation.
-
-[![Portfolio](https://img.shields.io/badge/EXPLORE_PORTFOLIO-FF7A18?style=for-the-badge&logo=vercel&logoColor=white)](${profile.portfolio})
-[![LinkedIn](https://img.shields.io/badge/CONNECT_ON_LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](${profile.linkedin})
-[![Email](https://img.shields.io/badge/START_A_CONVERSATION-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:${profile.email})
-[![GitHub](https://img.shields.io/badge/FOLLOW_ON_GITHUB-111827?style=for-the-badge&logo=github&logoColor=white)](https://github.com/${profile.username})
+I build AI products that connect models with context, tools, and real workflows. My current work spans multi-agent research, document intelligence, operational automation, and applied LLM interfaces.
 
 </td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td align="center"><a href="${profile.portfolio}"><img src="https://img.shields.io/badge/Portfolio-FF6B35?style=flat-square&amp;logo=vercel&amp;logoColor=white" alt="Portfolio" /></a></td>
+<td align="center"><a href="${profile.linkedin}"><img src="https://img.shields.io/badge/LinkedIn-FF6B35?style=flat-square&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn" /></a></td>
+<td align="center"><a href="mailto:${profile.email}"><img src="https://img.shields.io/badge/Email-FF6B35?style=flat-square&amp;logo=gmail&amp;logoColor=white" alt="Email" /></a></td>
+<td align="center"><a href="https://github.com/${profile.username}"><img src="https://img.shields.io/badge/GitHub-FF6B35?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub" /></a></td>
 </tr>
 </table>
 
 </div>
 
-<img src="./assets/divider.svg" width="100%" alt="" />
+## About me
 
-## Mission control
+I am a B.Tech Artificial Intelligence and Data Science student focused on building practical, deployed AI systems. I enjoy the engineering between a promising model and a product someone can actually use.
 
-<table>
-<tr>
-<td width="58%" valign="top">
-
-### About me
-
-I am a B.Tech Artificial Intelligence and Data Science student focused on shipping **deployed, recruiter-ready AI products**. My work sits at the intersection of LLM applications, agentic systems, retrieval, workflow automation, and useful product engineering.
-
-I care about the full path from an idea to a working system: structuring the problem, orchestrating models and tools, building the interface, deploying it, and making the output understandable.
-
-</td>
-<td width="42%" valign="top">
+My work covers problem framing, retrieval and agent orchestration, workflow integration, interface development, deployment, and clear output design.
 
 ### Current positioning
 
-\`\`\`yaml
-role: AI Automation Engineer
-focus: Agentic AI + RAG + LLM Apps
-building: Production-minded AI workflows
-delivery: Deployed demos and clear UX
-mode: Learning fast, shipping faster
+\`\`\`text
+ROLE:     AI Automation Engineer
+FOCUS:    Agentic AI · RAG · LLM applications
+BUILDING: Reliable workflows connected to real tools
+MODE:     Learn, measure, ship
 \`\`\`
 
-</td>
-</tr>
-</table>
-
-<br/>
-<img src="./assets/ai-command-center.svg" width="100%" alt="AI automation system pipeline" />
-
-## System architecture
+## System pipeline
 
 \`\`\`mermaid
 flowchart LR
-    A["Human / Business Input"] --> B["Context & Data Layer"]
-    B --> C["Retrieval / APIs / Tools"]
-    C --> D{"Agent Orchestrator"}
-    D --> E["Specialist Agents"]
-    E --> F["Validation & Guardrails"]
-    F --> G["Structured Output"]
-    G --> H["Workflow Action"]
-    H --> I["Logs, Analytics & Feedback"]
-    I -. improves .-> B
-
-    style D fill:#ff7a18,stroke:#ffb15c,color:#08111f
-    style H fill:#172033,stroke:#ff7a18,color:#f8fafc
+    A["Ingest"] --> B["Understand"] --> C["Reason"]
+    C --> D["Orchestrate"] --> E["Deliver"] --> F["Measure"]
+    F -. feedback .-> B
+    style C fill:#FFF0EA,stroke:#FF6B35,color:#111114
+    style D fill:#FFF0EA,stroke:#FF6B35,color:#111114
 \`\`\`
 
-<img src="./assets/divider.svg" width="100%" alt="" />
+<details>
+<summary>Static pipeline fallback</summary>
+<br/>
+<img src="./assets/pipeline.svg" width="100%" alt="AI system pipeline: ingest, understand, reason, orchestrate, deliver, measure" />
+</details>
 
-## Engineering toolkit
+## Tech stack
 
 <div align="center">
 
@@ -135,97 +93,96 @@ flowchart LR
 
 </div>
 
-| AI + LLM Systems | Automation + APIs | Data + Analytics |
-|:---|:---|:---|
-| ${skillBadges["AI + LLM Systems"]} | ${skillBadges["Automation + APIs"]} | ${skillBadges["Data + Analytics"]} |
+**AI + LLM**
 
-<br/>
-<img src="./assets/project-showcase.svg" width="100%" alt="Featured AI systems" />
+${skillRow(skills.ai)}
 
-<table>
-${rows.join("\n")}
-</table>
+**Automation + APIs**
 
-> **Product signal:** ${projects.filter((project) => project.status === "LIVE").length} deployed demos are live now. The two workflow projects marked **Deployment Link Pending** are real projects whose public URLs still need to be added — no invented demos or claims.
+${skillRow(skills.automation)}
 
-<img src="./assets/divider.svg" width="100%" alt="" />
+**Data + analytics**
 
-## GitHub engineering telemetry
+${skillRow(skills.data)}
+
+## Featured AI systems
+
+${renderProjectSections()}
+
+> ${shippedCount} systems are currently deployed. Projects without public URLs are deliberately labeled **In Development**.
+
+## GitHub activity
+
+Static fallback: [view repositories and contribution activity directly on GitHub](https://github.com/${profile.username}?tab=repositories).
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=${profile.username}&show_icons=true&hide_border=true&bg_color=0d1117&title_color=ff7a18&icon_color=ff7a18&text_color=c9d1d9&rank_icon=github" />
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=${profile.username}&show_icons=true&hide_border=true&bg_color=ffffff&title_color=e85d04&icon_color=e85d04&text_color=1f2937&rank_icon=github" alt="GitHub stats" />
-</picture>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=${profile.username}&hide_border=true&background=0D1117&ring=FF7A18&fire=FF7A18&currStreakLabel=FF7A18&sideLabels=C9D1D9&dates=8B949E&currStreakNum=F8FAFC&sideNums=F8FAFC" />
-  <img width="49%" src="https://streak-stats.demolab.com?user=${profile.username}&hide_border=true&background=FFFFFF&ring=E85D04&fire=E85D04&currStreakLabel=E85D04&sideLabels=374151&dates=6B7280&currStreakNum=111827&sideNums=111827" alt="GitHub streak" />
-</picture>
-
-<br/>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=${profile.username}&layout=compact&hide_border=true&bg_color=0d1117&title_color=ff7a18&text_color=c9d1d9&langs_count=8" />
-  <img width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=${profile.username}&layout=compact&hide_border=true&bg_color=ffffff&title_color=e85d04&text_color=1f2937&langs_count=8" alt="Top languages" />
-</picture>
+<img width="72%" src="https://github-readme-stats.vercel.app/api?username=${profile.username}&show_icons=true&hide_border=true&bg_color=FAFAF8&title_color=FF6B35&icon_color=FF6B35&text_color=111114&rank_icon=github" alt="GitHub profile statistics" />
 
 <br/><br/>
 
-<img src="./assets/github-metrics.svg" width="100%" alt="Detailed GitHub metrics" />
+<img width="72%" src="https://streak-stats.demolab.com?user=${profile.username}&hide_border=true&background=FAFAF8&ring=FF6B35&fire=FF6B35&currStreakLabel=FF6B35&sideLabels=6B7280&dates=6B7280&currStreakNum=111114&sideNums=111114" alt="GitHub contribution streak" />
 
-<br/>
+<br/><br/>
 
-![Contribution snake](https://raw.githubusercontent.com/${profile.username}/${profile.username}/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)
-![Contribution snake](https://raw.githubusercontent.com/${profile.username}/${profile.username}/output/github-contribution-grid-snake.svg#gh-light-mode-only)
+<img width="58%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=${profile.username}&layout=compact&hide_border=true&bg_color=FAFAF8&title_color=FF6B35&text_color=111114&langs_count=8" alt="Most-used GitHub languages" />
 
 </div>
 
-<img src="./assets/divider.svg" width="100%" alt="" />
+<details>
+<summary><strong>Expand for extended metrics</strong></summary>
+<br/>
+If the generated image is unavailable, the core profile and project links above remain fully usable.
+<br/><br/>
+<img src="./assets/github-metrics.svg" width="100%" alt="Extended GitHub metrics" />
+</details>
+
+## Contribution trail
+
+<div align="center">
+
+![Contribution snake](https://raw.githubusercontent.com/${profile.username}/${profile.username}/output/github-contribution-grid-snake.svg)
+
+</div>
+
+Snake fallback: [open the native GitHub contribution graph](https://github.com/${profile.username}#js-contribution-activity).
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-## Learning direction
+### Learning direction
 
-- Evaluating and observing multi-agent systems
-- Production RAG: retrieval quality, reranking, and citations
-- Reliable tool use and structured LLM outputs
+- Evaluating multi-agent reliability
+- Retrieval quality, reranking, and citations
+- Structured outputs and dependable tool use
 - Human-in-the-loop workflow design
-- AI product deployment and operational feedback
 
 </td>
 <td width="50%" valign="top">
 
-## Building next
+### Building next
 
 - Reusable agent orchestration patterns
-- More measurable automation case studies
+- Measurable automation case studies
 - Workflow dashboards with audit trails
-- AI systems that connect reasoning to real APIs
-- Public technical breakdowns of shipped projects
+- Technical breakdowns of shipped systems
 
 </td>
 </tr>
 </table>
 
-## Let's build something useful
+## Contact
 
-I am open to **AI engineering internships, automation projects, applied LLM work, and conversations with teams building practical AI products**.
+Open to AI engineering internships, applied LLM work, and automation projects.
 
-<div align="center">
+<p align="center">
+<a href="${profile.portfolio}"><img src="https://img.shields.io/badge/Portfolio-FF6B35?style=flat-square" alt="Portfolio" /></a>
+<a href="${profile.linkedin}"><img src="https://img.shields.io/badge/LinkedIn-FF6B35?style=flat-square" alt="LinkedIn" /></a>
+<a href="mailto:${profile.email}"><img src="https://img.shields.io/badge/Email-FF6B35?style=flat-square" alt="Email" /></a>
+</p>
 
-[![Portfolio](https://img.shields.io/badge/PORTFOLIO-FF7A18?style=for-the-badge&logo=vercel&logoColor=white)](${profile.portfolio})
-[![LinkedIn](https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](${profile.linkedin})
-[![Email](https://img.shields.io/badge/EMAIL-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:${profile.email})
-
-<br/><br/>
-<img src="./assets/footer.svg" width="100%" alt="Designed and engineered by ${profile.name}" />
-
-<sub>Designed as an AI Automation Command Center · Data-driven and refreshed with GitHub Actions</sub>
-
-</div>
+<img src="./assets/footer.svg" width="100%" alt="${profile.name} — AI Automation Engineer" />
 `;
 
 fs.writeFileSync(path.join(root, "README.md"), readme);

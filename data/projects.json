@@ -2,56 +2,51 @@
   {
     "id": "multi-agent-research",
     "title": "Multi-Agent Research Assistant",
-    "eyebrow": "AGENTIC RESEARCH",
-    "description": "AI research automation system using multiple agents to research, summarize, structure, and deliver reports.",
+    "label": "AGENTIC RESEARCH",
+    "tier": "shipped",
+    "description": "A multi-agent research system that gathers evidence, synthesizes findings, structures the result, and delivers a usable report.",
     "skills": ["Multi-Agent AI", "LLMs", "Automation", "Report Generation"],
     "live": "https://multi-agent-research-automation.vercel.app/",
-    "repo": null,
-    "status": "LIVE",
-    "accent": "#ff7a18"
+    "repo": null
   },
   {
     "id": "document-intelligence-rag",
     "title": "Document Intelligence RAG",
-    "eyebrow": "KNOWLEDGE SYSTEM",
-    "description": "RAG-powered document assistant that ingests documents, retrieves relevant chunks, and answers questions.",
+    "label": "KNOWLEDGE SYSTEM",
+    "tier": "shipped",
+    "description": "A document assistant that ingests files, retrieves relevant chunks, and answers questions using grounded context.",
     "skills": ["RAG", "Vector Search", "Embeddings", "Document AI"],
     "live": "https://document-intelligence-rag-iota.vercel.app/",
-    "repo": null,
-    "status": "LIVE",
-    "accent": "#38bdf8"
-  },
-  {
-    "id": "smart-email-classification",
-    "title": "Smart Email Classification",
-    "eyebrow": "WORKFLOW AUTOMATION",
-    "description": "AI email automation system that classifies emails, extracts intent, logs structured data, and prepares automation actions.",
-    "skills": ["Gmail API", "n8n", "LLM Classification", "Workflow Automation"],
-    "live": "ADD_PLACEHOLDER_LINK",
-    "repo": null,
-    "status": "DEMO SOON",
-    "accent": "#a78bfa"
-  },
-  {
-    "id": "ai-resume-screening",
-    "title": "AI Resume Screening Workflow",
-    "eyebrow": "HR AUTOMATION",
-    "description": "AI hiring workflow that screens resumes against job descriptions, scores candidates, and supports shortlisting.",
-    "skills": ["Resume Parsing", "AI Scoring", "HR Automation", "Candidate Ranking"],
-    "live": "ADD_PLACEHOLDER_LINK",
-    "repo": null,
-    "status": "DEMO SOON",
-    "accent": "#22c55e"
+    "repo": null
   },
   {
     "id": "opspilot-ai",
     "title": "OpsPilot AI",
-    "eyebrow": "SRE + FINOPS",
-    "description": "Autonomous SRE and FinOps command center that simulates incidents, analyzes operational signals, and generates structured action reports.",
+    "label": "SRE + FINOPS",
+    "tier": "shipped",
+    "description": "An autonomous SRE and FinOps command center for incident simulation, signal analysis, and structured action reports.",
     "skills": ["SRE Automation", "FinOps", "Incident Intelligence", "Next.js"],
     "live": "https://opspilot-ai-coral.vercel.app/",
-    "repo": "https://github.com/starker111/opspilot-ai",
-    "status": "LIVE",
-    "accent": "#f59e0b"
+    "repo": "https://github.com/starker111/opspilot-ai"
+  },
+  {
+    "id": "smart-email-classification",
+    "title": "Smart Email Classification",
+    "label": "WORKFLOW AUTOMATION",
+    "tier": "building",
+    "description": "An email workflow that classifies messages, extracts intent, records structured data, and prepares downstream actions.",
+    "skills": ["Gmail API", "n8n", "LLM Classification", "Workflow Automation"],
+    "live": null,
+    "repo": null
+  },
+  {
+    "id": "ai-resume-screening",
+    "title": "AI Resume Screening Workflow",
+    "label": "HR AUTOMATION",
+    "tier": "building",
+    "description": "A hiring workflow for parsing resumes, comparing them with job requirements, scoring candidates, and supporting shortlisting.",
+    "skills": ["Resume Parsing", "AI Scoring", "HR Automation", "Candidate Ranking"],
+    "live": null,
+    "repo": null
   }
 ]

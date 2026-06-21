@@ -16,13 +16,12 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: Generate light and dark contribution snakes
+      - name: Generate contribution snake
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: starker111
           outputs: |
             dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
       - name: Publish assets to output branch
         uses: peaceiris/actions-gh-pages@v4

@@ -1,88 +1,70 @@
 <div align="center">
 
-<img src="./assets/hero.svg" width="100%" alt="Kovi Varun Jaswanth Sai — AI Automation Command Center" />
+<img src="./assets/hero.svg" width="100%" alt="Kovi Varun Jaswanth Sai — AI Automation Engineer" />
 
 <br/>
 
 <table>
 <tr>
-<td width="28%" align="center" valign="middle">
-<img src="./assets/profile.png" width="180" alt="Kovi Varun Jaswanth Sai" style="border-radius:50%" />
+<td width="25%" align="center" valign="middle">
+<img src="./assets/profile.png" width="170" alt="Kovi Varun Jaswanth Sai" style="border-radius:50%" />
 </td>
-<td width="72%" valign="middle">
+<td width="75%" valign="middle">
 
-## Building AI systems that move work forward.
+## Practical AI systems, designed to ship.
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=22&duration=2800&pause=800&color=FF7A18&vCenter=true&width=650&lines=AI+Automation+Engineer;Agentic+AI+Builder;RAG+%26+LLM+App+Developer;Turning+workflows+into+intelligent+systems)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Inter&weight=650&size=21&duration=3000&pause=900&color=FF6B35&vCenter=true&width=620&lines=AI+Automation+Engineer;Agentic+AI+%7C+RAG+%7C+LLM+Applications;Building+deployed+AI+products)](https://git.io/typing-svg)
 
-I design practical AI products that can **reason over context, coordinate workflows, retrieve knowledge, and produce useful actions** — from multi-agent research to document intelligence and operations automation.
-
-[![Portfolio](https://img.shields.io/badge/EXPLORE_PORTFOLIO-FF7A18?style=for-the-badge&logo=vercel&logoColor=white)](https://kovi-ai-automation-portfolio.vercel.app/)
-[![LinkedIn](https://img.shields.io/badge/CONNECT_ON_LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kovi-varun-jaswanth-sai-588599302/)
-[![Email](https://img.shields.io/badge/START_A_CONVERSATION-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sjaswanth486@gmail.com)
-[![GitHub](https://img.shields.io/badge/FOLLOW_ON_GITHUB-111827?style=for-the-badge&logo=github&logoColor=white)](https://github.com/starker111)
+I build AI products that connect models with context, tools, and real workflows. My current work spans multi-agent research, document intelligence, operational automation, and applied LLM interfaces.
 
 </td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td align="center"><a href="https://kovi-ai-automation-portfolio.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-FF6B35?style=flat-square&amp;logo=vercel&amp;logoColor=white" alt="Portfolio" /></a></td>
+<td align="center"><a href="https://www.linkedin.com/in/kovi-varun-jaswanth-sai-588599302/"><img src="https://img.shields.io/badge/LinkedIn-FF6B35?style=flat-square&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn" /></a></td>
+<td align="center"><a href="mailto:sjaswanth486@gmail.com"><img src="https://img.shields.io/badge/Email-FF6B35?style=flat-square&amp;logo=gmail&amp;logoColor=white" alt="Email" /></a></td>
+<td align="center"><a href="https://github.com/starker111"><img src="https://img.shields.io/badge/GitHub-FF6B35?style=flat-square&amp;logo=github&amp;logoColor=white" alt="GitHub" /></a></td>
 </tr>
 </table>
 
 </div>
 
-<img src="./assets/divider.svg" width="100%" alt="" />
+## About me
 
-## Mission control
+I am a B.Tech Artificial Intelligence and Data Science student focused on building practical, deployed AI systems. I enjoy the engineering between a promising model and a product someone can actually use.
 
-<table>
-<tr>
-<td width="58%" valign="top">
-
-### About me
-
-I am a B.Tech Artificial Intelligence and Data Science student focused on shipping **deployed, recruiter-ready AI products**. My work sits at the intersection of LLM applications, agentic systems, retrieval, workflow automation, and useful product engineering.
-
-I care about the full path from an idea to a working system: structuring the problem, orchestrating models and tools, building the interface, deploying it, and making the output understandable.
-
-</td>
-<td width="42%" valign="top">
+My work covers problem framing, retrieval and agent orchestration, workflow integration, interface development, deployment, and clear output design.
 
 ### Current positioning
 
-```yaml
-role: AI Automation Engineer
-focus: Agentic AI + RAG + LLM Apps
-building: Production-minded AI workflows
-delivery: Deployed demos and clear UX
-mode: Learning fast, shipping faster
+```text
+ROLE:     AI Automation Engineer
+FOCUS:    Agentic AI · RAG · LLM applications
+BUILDING: Reliable workflows connected to real tools
+MODE:     Learn, measure, ship
 ```
 
-</td>
-</tr>
-</table>
-
-<br/>
-<img src="./assets/ai-command-center.svg" width="100%" alt="AI automation system pipeline" />
-
-## System architecture
+## System pipeline
 
 ```mermaid
 flowchart LR
-    A["Human / Business Input"] --> B["Context & Data Layer"]
-    B --> C["Retrieval / APIs / Tools"]
-    C --> D{"Agent Orchestrator"}
-    D --> E["Specialist Agents"]
-    E --> F["Validation & Guardrails"]
-    F --> G["Structured Output"]
-    G --> H["Workflow Action"]
-    H --> I["Logs, Analytics & Feedback"]
-    I -. improves .-> B
-
-    style D fill:#ff7a18,stroke:#ffb15c,color:#08111f
-    style H fill:#172033,stroke:#ff7a18,color:#f8fafc
+    A["Ingest"] --> B["Understand"] --> C["Reason"]
+    C --> D["Orchestrate"] --> E["Deliver"] --> F["Measure"]
+    F -. feedback .-> B
+    style C fill:#FFF0EA,stroke:#FF6B35,color:#111114
+    style D fill:#FFF0EA,stroke:#FF6B35,color:#111114
 ```
 
-<img src="./assets/divider.svg" width="100%" alt="" />
+<details>
+<summary>Static pipeline fallback</summary>
+<br/>
+<img src="./assets/pipeline.svg" width="100%" alt="AI system pipeline: ingest, understand, reason, orchestrate, deliver, measure" />
+</details>
 
-## Engineering toolkit
+## Tech stack
 
 <div align="center">
 
@@ -90,105 +72,143 @@ flowchart LR
 
 </div>
 
-| AI + LLM Systems | Automation + APIs | Data + Analytics |
-|:---|:---|:---|
-| ![LangChain](https://img.shields.io/badge/LangChain-111827?style=for-the-badge) ![LlamaIndex](https://img.shields.io/badge/LlamaIndex-111827?style=for-the-badge) ![RAG](https://img.shields.io/badge/RAG-111827?style=for-the-badge) ![LLM Apps](https://img.shields.io/badge/LLM+Apps-111827?style=for-the-badge) ![Ollama](https://img.shields.io/badge/Ollama-111827?style=for-the-badge) ![Gemini](https://img.shields.io/badge/Gemini-111827?style=for-the-badge) | ![n8n](https://img.shields.io/badge/n8n-172033?style=for-the-badge) ![Gmail API](https://img.shields.io/badge/Gmail+API-172033?style=for-the-badge) ![Google Sheets API](https://img.shields.io/badge/Google+Sheets+API-172033?style=for-the-badge) ![GitHub Actions](https://img.shields.io/badge/GitHub+Actions-172033?style=for-the-badge) ![Vercel](https://img.shields.io/badge/Vercel-172033?style=for-the-badge) | ![Supabase](https://img.shields.io/badge/Supabase-1E293B?style=for-the-badge) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-1E293B?style=for-the-badge) ![MongoDB](https://img.shields.io/badge/MongoDB-1E293B?style=for-the-badge) ![BigQuery](https://img.shields.io/badge/BigQuery-1E293B?style=for-the-badge) ![Power BI](https://img.shields.io/badge/Power+BI-1E293B?style=for-the-badge) ![Tableau](https://img.shields.io/badge/Tableau-1E293B?style=for-the-badge) |
+**AI + LLM**
 
-<br/>
-<img src="./assets/project-showcase.svg" width="100%" alt="Featured AI systems" />
+![LangChain](https://img.shields.io/badge/LangChain-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE) ![LlamaIndex](https://img.shields.io/badge/LlamaIndex-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE) ![RAG](https://img.shields.io/badge/RAG-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE) ![LLM Apps](https://img.shields.io/badge/LLM_Apps-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE) ![Ollama](https://img.shields.io/badge/Ollama-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE) ![Gemini](https://img.shields.io/badge/Gemini-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE)
+
+**Automation + APIs**
+
+![n8n](https://img.shields.io/badge/n8n-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE) ![Gmail API](https://img.shields.io/badge/Gmail_API-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE) ![Google Sheets API](https://img.shields.io/badge/Google_Sheets_API-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE) ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE) ![Vercel](https://img.shields.io/badge/Vercel-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE)
+
+**Data + analytics**
+
+![Supabase](https://img.shields.io/badge/Supabase-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE) ![MongoDB](https://img.shields.io/badge/MongoDB-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE) ![BigQuery](https://img.shields.io/badge/BigQuery-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE) ![Power BI](https://img.shields.io/badge/Power_BI-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE) ![Tableau](https://img.shields.io/badge/Tableau-F0F0EE?style=flat-square&labelColor=F0F0EE&color=F0F0EE)
+
+## Featured AI systems
+
+### Shipped & live
 
 <table>
 <tr>
-<td width="50%" valign="top"><a href="https://multi-agent-research-automation.vercel.app/"><img src="./assets/project-cards/multi-agent-research.svg" width="100%" alt="Multi-Agent Research Assistant project card" /></a><br/><a href="https://multi-agent-research-automation.vercel.app/"><img src="https://img.shields.io/badge/LIVE_DEMO-FF7A18?style=for-the-badge&amp;logo=vercel&amp;logoColor=white" alt="Open live demo" /></a></td>
-<td width="50%" valign="top"><a href="https://document-intelligence-rag-iota.vercel.app/"><img src="./assets/project-cards/document-intelligence-rag.svg" width="100%" alt="Document Intelligence RAG project card" /></a><br/><a href="https://document-intelligence-rag-iota.vercel.app/"><img src="https://img.shields.io/badge/LIVE_DEMO-FF7A18?style=for-the-badge&amp;logo=vercel&amp;logoColor=white" alt="Open live demo" /></a></td>
+<td width="50%" valign="top">
+<h3>Multi-Agent Research Assistant</h3>
+<p><code>AGENTIC RESEARCH</code> &nbsp; <strong>● LIVE</strong></p>
+<p>A multi-agent research system that gathers evidence, synthesizes findings, structures the result, and delivers a usable report.</p>
+<p><code>Multi-Agent AI</code> · <code>LLMs</code> · <code>Automation</code> · <code>Report Generation</code></p>
+<p><a href="https://multi-agent-research-automation.vercel.app/"><img src="https://img.shields.io/badge/open_live_system-FF6B35?style=flat-square&amp;logo=vercel&amp;logoColor=white" alt="Open live system" /></a></p>
+</td>
+<td width="50%" valign="top">
+<h3>Document Intelligence RAG</h3>
+<p><code>KNOWLEDGE SYSTEM</code> &nbsp; <strong>● LIVE</strong></p>
+<p>A document assistant that ingests files, retrieves relevant chunks, and answers questions using grounded context.</p>
+<p><code>RAG</code> · <code>Vector Search</code> · <code>Embeddings</code> · <code>Document AI</code></p>
+<p><a href="https://document-intelligence-rag-iota.vercel.app/"><img src="https://img.shields.io/badge/open_live_system-FF6B35?style=flat-square&amp;logo=vercel&amp;logoColor=white" alt="Open live system" /></a></p>
+</td>
 </tr>
 <tr>
-<td width="50%" valign="top"><a href="https://kovi-ai-automation-portfolio.vercel.app/"><img src="./assets/project-cards/smart-email-classification.svg" width="100%" alt="Smart Email Classification project card" /></a><br/><img src="https://img.shields.io/badge/DEPLOYMENT_LINK-PENDING-64748B?style=for-the-badge" alt="Deployment link pending" /></td>
-<td width="50%" valign="top"><a href="https://kovi-ai-automation-portfolio.vercel.app/"><img src="./assets/project-cards/ai-resume-screening.svg" width="100%" alt="AI Resume Screening Workflow project card" /></a><br/><img src="https://img.shields.io/badge/DEPLOYMENT_LINK-PENDING-64748B?style=for-the-badge" alt="Deployment link pending" /></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><a href="https://opspilot-ai-coral.vercel.app/"><img src="./assets/project-cards/opspilot-ai.svg" width="100%" alt="OpsPilot AI project card" /></a><br/><a href="https://opspilot-ai-coral.vercel.app/"><img src="https://img.shields.io/badge/LIVE_DEMO-FF7A18?style=for-the-badge&amp;logo=vercel&amp;logoColor=white" alt="Open live demo" /></a> <a href="https://github.com/starker111/opspilot-ai"><img src="https://img.shields.io/badge/SOURCE-111827?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="Open source repository" /></a></td>
-<td width="50%" valign="top"></td>
+<td width="50%" valign="top">
+<h3>OpsPilot AI</h3>
+<p><code>SRE + FINOPS</code> &nbsp; <strong>● LIVE</strong></p>
+<p>An autonomous SRE and FinOps command center for incident simulation, signal analysis, and structured action reports.</p>
+<p><code>SRE Automation</code> · <code>FinOps</code> · <code>Incident Intelligence</code> · <code>Next.js</code></p>
+<p><a href="https://opspilot-ai-coral.vercel.app/"><img src="https://img.shields.io/badge/open_live_system-FF6B35?style=flat-square&amp;logo=vercel&amp;logoColor=white" alt="Open live system" /></a> <a href="https://github.com/starker111/opspilot-ai"><img src="https://img.shields.io/badge/source-111114?style=flat-square&amp;logo=github&amp;logoColor=white" alt="Source repository" /></a></p>
+</td>
+<td width="50%"></td>
 </tr>
 </table>
 
-> **Product signal:** 3 deployed demos are live now. The two workflow projects marked **Deployment Link Pending** are real projects whose public URLs still need to be added — no invented demos or claims.
+### In development
 
-<img src="./assets/divider.svg" width="100%" alt="" />
+These workflows are actively being built and do not have public deployment URLs yet.
 
-## GitHub engineering telemetry
+<table>
+<tr>
+<td width="50%" valign="top">
+<h4>Smart Email Classification</h4>
+<p><code>IN DEVELOPMENT</code></p>
+<p>An email workflow that classifies messages, extracts intent, records structured data, and prepares downstream actions.</p>
+<p><code>Gmail API</code> · <code>n8n</code> · <code>LLM Classification</code> · <code>Workflow Automation</code></p>
+</td>
+<td width="50%" valign="top">
+<h4>AI Resume Screening Workflow</h4>
+<p><code>IN DEVELOPMENT</code></p>
+<p>A hiring workflow for parsing resumes, comparing them with job requirements, scoring candidates, and supporting shortlisting.</p>
+<p><code>Resume Parsing</code> · <code>AI Scoring</code> · <code>HR Automation</code> · <code>Candidate Ranking</code></p>
+</td>
+</tr>
+</table>
+
+> 3 systems are currently deployed. Projects without public URLs are deliberately labeled **In Development**.
+
+## GitHub activity
+
+Static fallback: [view repositories and contribution activity directly on GitHub](https://github.com/starker111?tab=repositories).
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=starker111&show_icons=true&hide_border=true&bg_color=0d1117&title_color=ff7a18&icon_color=ff7a18&text_color=c9d1d9&rank_icon=github" />
-  <img width="49%" src="https://github-readme-stats.vercel.app/api?username=starker111&show_icons=true&hide_border=true&bg_color=ffffff&title_color=e85d04&icon_color=e85d04&text_color=1f2937&rank_icon=github" alt="GitHub stats" />
-</picture>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=starker111&hide_border=true&background=0D1117&ring=FF7A18&fire=FF7A18&currStreakLabel=FF7A18&sideLabels=C9D1D9&dates=8B949E&currStreakNum=F8FAFC&sideNums=F8FAFC" />
-  <img width="49%" src="https://streak-stats.demolab.com?user=starker111&hide_border=true&background=FFFFFF&ring=E85D04&fire=E85D04&currStreakLabel=E85D04&sideLabels=374151&dates=6B7280&currStreakNum=111827&sideNums=111827" alt="GitHub streak" />
-</picture>
-
-<br/>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=starker111&layout=compact&hide_border=true&bg_color=0d1117&title_color=ff7a18&text_color=c9d1d9&langs_count=8" />
-  <img width="42%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=starker111&layout=compact&hide_border=true&bg_color=ffffff&title_color=e85d04&text_color=1f2937&langs_count=8" alt="Top languages" />
-</picture>
+<img width="72%" src="https://github-readme-stats.vercel.app/api?username=starker111&show_icons=true&hide_border=true&bg_color=FAFAF8&title_color=FF6B35&icon_color=FF6B35&text_color=111114&rank_icon=github" alt="GitHub profile statistics" />
 
 <br/><br/>
 
-<img src="./assets/github-metrics.svg" width="100%" alt="Detailed GitHub metrics" />
+<img width="72%" src="https://streak-stats.demolab.com?user=starker111&hide_border=true&background=FAFAF8&ring=FF6B35&fire=FF6B35&currStreakLabel=FF6B35&sideLabels=6B7280&dates=6B7280&currStreakNum=111114&sideNums=111114" alt="GitHub contribution streak" />
 
-<br/>
+<br/><br/>
 
-![Contribution snake](https://raw.githubusercontent.com/starker111/starker111/output/github-contribution-grid-snake-dark.svg#gh-dark-mode-only)
-![Contribution snake](https://raw.githubusercontent.com/starker111/starker111/output/github-contribution-grid-snake.svg#gh-light-mode-only)
+<img width="58%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=starker111&layout=compact&hide_border=true&bg_color=FAFAF8&title_color=FF6B35&text_color=111114&langs_count=8" alt="Most-used GitHub languages" />
 
 </div>
 
-<img src="./assets/divider.svg" width="100%" alt="" />
+<details>
+<summary><strong>Expand for extended metrics</strong></summary>
+<br/>
+If the generated image is unavailable, the core profile and project links above remain fully usable.
+<br/><br/>
+<img src="./assets/github-metrics.svg" width="100%" alt="Extended GitHub metrics" />
+</details>
+
+## Contribution trail
+
+<div align="center">
+
+![Contribution snake](https://raw.githubusercontent.com/starker111/starker111/output/github-contribution-grid-snake.svg)
+
+</div>
+
+Snake fallback: [open the native GitHub contribution graph](https://github.com/starker111#js-contribution-activity).
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-## Learning direction
+### Learning direction
 
-- Evaluating and observing multi-agent systems
-- Production RAG: retrieval quality, reranking, and citations
-- Reliable tool use and structured LLM outputs
+- Evaluating multi-agent reliability
+- Retrieval quality, reranking, and citations
+- Structured outputs and dependable tool use
 - Human-in-the-loop workflow design
-- AI product deployment and operational feedback
 
 </td>
 <td width="50%" valign="top">
 
-## Building next
+### Building next
 
 - Reusable agent orchestration patterns
-- More measurable automation case studies
+- Measurable automation case studies
 - Workflow dashboards with audit trails
-- AI systems that connect reasoning to real APIs
-- Public technical breakdowns of shipped projects
+- Technical breakdowns of shipped systems
 
 </td>
 </tr>
 </table>
 
-## Let's build something useful
+## Contact
 
-I am open to **AI engineering internships, automation projects, applied LLM work, and conversations with teams building practical AI products**.
+Open to AI engineering internships, applied LLM work, and automation projects.
 
-<div align="center">
+<p align="center">
+<a href="https://kovi-ai-automation-portfolio.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-FF6B35?style=flat-square" alt="Portfolio" /></a>
+<a href="https://www.linkedin.com/in/kovi-varun-jaswanth-sai-588599302/"><img src="https://img.shields.io/badge/LinkedIn-FF6B35?style=flat-square" alt="LinkedIn" /></a>
+<a href="mailto:sjaswanth486@gmail.com"><img src="https://img.shields.io/badge/Email-FF6B35?style=flat-square" alt="Email" /></a>
+</p>
 
-[![Portfolio](https://img.shields.io/badge/PORTFOLIO-FF7A18?style=for-the-badge&logo=vercel&logoColor=white)](https://kovi-ai-automation-portfolio.vercel.app/)
-[![LinkedIn](https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kovi-varun-jaswanth-sai-588599302/)
-[![Email](https://img.shields.io/badge/EMAIL-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sjaswanth486@gmail.com)
-
-<br/><br/>
-<img src="./assets/footer.svg" width="100%" alt="Designed and engineered by Kovi Varun Jaswanth Sai" />
-
-<sub>Designed as an AI Automation Command Center · Data-driven and refreshed with GitHub Actions</sub>
-
-</div>
+<img src="./assets/footer.svg" width="100%" alt="Kovi Varun Jaswanth Sai — AI Automation Engineer" />
