@@ -1,36 +1,59 @@
-# This is a basic workflow to help you get started with Actions
+name: Generate advanced GitHub metrics
 
-name: CI
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+  schedule:
+    - cron: "41 1 * * 0,3"
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+permissions:
+  contents: write
+
+concurrency:
+  group: github-metrics
+  cancel-in-progress: true
+
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  metrics:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    continue-on-error: true
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - name: Check out profile repository
+        uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Build metrics dashboard
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
+          user: starker111
+          template: classic
+          filename: assets/github-metrics.svg
+          base: header, activity, community, repositories, metadata
+          config_timezone: Asia/Kolkata
+          config_display: large
+          config_padding: 0, 8 + 11%
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_categories: markup, programming
+          plugin_languages_limit: 8
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_recent_days: 30
+          plugin_languages_sections: most-used, recently-used
+          plugin_languages_threshold: 0%
+          plugin_notable: yes
+          plugin_notable_filter: stars:>1
+          plugin_notable_repositories: yes
+          plugin_notable_types: commit
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Commit metrics when updated
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          if git diff --quiet -- assets/github-metrics.svg; then
+            echo "Metrics image is already current or generation was skipped."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/github-metrics.svg
+          git commit -m "chore: update GitHub metrics"
+          git push

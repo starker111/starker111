@@ -1,0 +1,8 @@
+# The profile photo is intentionally supplied by the profile owner.
+# Do not ignore assets/profile.png once it is added.
+
+# Local editor and operating-system noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
