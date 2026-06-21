@@ -1,0 +1,37 @@
+{
+  "core": [
+    "Python",
+    "TypeScript",
+    "JavaScript",
+    "Next.js",
+    "React",
+    "Tailwind CSS"
+  ],
+  "ai": [
+    "LangChain",
+    "LlamaIndex",
+    "RAG",
+    "LLM Apps",
+    "Ollama",
+    "Gemini"
+  ],
+  "automation": [
+    "n8n",
+    "Gmail API",
+    "Google Sheets API",
+    "GitHub Actions",
+    "Vercel"
+  ],
+  "data": [
+    "Supabase",
+    "PostgreSQL",
+    "MongoDB",
+    "BigQuery",
+    "Power BI",
+    "Tableau"
+  ],
+  "platform": [
+    "Git",
+    "GitHub"
+  ]
+}

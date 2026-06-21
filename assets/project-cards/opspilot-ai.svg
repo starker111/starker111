@@ -1,0 +1,31 @@
+<svg width="570" height="320" viewBox="0 0 570 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">OpsPilot AI</title>
+  <desc id="desc">Autonomous SRE and FinOps command center that simulates incidents, analyzes operational signals, and generates structured action reports.</desc>
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="570" y2="320">
+      <stop stop-color="#111827"/><stop offset="1" stop-color="#090F1A"/>
+    </linearGradient>
+    <linearGradient id="accent4" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#f59e0b"/><stop offset="1" stop-color="#FF6B00"/>
+    </linearGradient>
+  </defs>
+  <rect x=".75" y=".75" width="568.5" height="318.5" rx="20" fill="url(#bg4)" stroke="#334155" stroke-width="1.5"/>
+  <rect x="0" y="0" width="7" height="320" rx="3.5" fill="#f59e0b"/>
+  <g font-family="Segoe UI, Inter, Arial, sans-serif">
+    <text x="28" y="42" fill="#f59e0b" font-size="11" font-weight="800" letter-spacing="1.6">SRE + FINOPS</text>
+    <rect x="455" y="22" width="87" height="28" rx="14" fill="#f59e0b" fill-opacity=".12" stroke="#f59e0b" stroke-opacity=".55"/>
+    <circle cx="472" cy="36" r="4" fill="#22C55E"/>
+    <text x="484" y="40" fill="#E2E8F0" font-size="10" font-weight="800">LIVE</text>
+    <text x="28" y="91" fill="#F8FAFC" font-size="25" font-weight="800">OpsPilot AI</text>
+    <text x="28" y="132" fill="#94A3B8" font-size="14">Autonomous SRE and FinOps command center that simulates</text>
+<text x="28" y="156" fill="#94A3B8" font-size="14">incidents, analyzes operational signals, and generates</text>
+<text x="28" y="180" fill="#94A3B8" font-size="14">structured action reports.</text>
+    <rect x="28" y="250" width="122" height="28" rx="8" fill="#172033" stroke="#334155"/>
+      <text x="40" y="268" fill="#CBD5E1" font-family="Segoe UI, Arial" font-size="11" font-weight="600">SRE Automation</text>
+<rect x="159" y="250" width="70" height="28" rx="8" fill="#172033" stroke="#334155"/>
+      <text x="171" y="268" fill="#CBD5E1" font-family="Segoe UI, Arial" font-size="11" font-weight="600">FinOps</text>
+<rect x="238" y="250" width="171" height="28" rx="8" fill="#172033" stroke="#334155"/>
+      <text x="250" y="268" fill="#CBD5E1" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Incident Intelligence</text>
+    <text x="446" y="298" fill="#f59e0b" font-size="12" font-weight="800">OPEN PROJECT  ↗</text>
+  </g>
+</svg>
